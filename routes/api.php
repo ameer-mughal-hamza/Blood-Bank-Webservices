@@ -30,12 +30,12 @@ Route::post('/register', [
 
 Route::group(['middleware' => 'auth:api'], function () {
     Route::apiResource('donor', 'DonorController');
-    Route::get('donor/edit/{id}',[
+    Route::get('donor/edit/{id}', [
         'as' => 'donor.edit',
         'uses' => 'DonorController@edit'
     ]);
     Route::apiResource('bloodbank', 'BloodbankController');
-    Route::get('bloodbank/edit/{id}',[
+    Route::get('bloodbank/edit/{id}', [
         'as' => 'bloodbank.edit',
         'uses' => 'BloodbankController@edit'
     ]);

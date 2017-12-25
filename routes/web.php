@@ -12,5 +12,24 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('welcome');
 });
+
+Route::get('event-single', function () {
+    return view('single-user-pusher');
+});
+
+Route::get('event-all', function () {
+    return view('all-user-event');
+});
+
+
+Route::post('event-single', [
+    'uses' => 'PushController@singleUserEvent',
+    'as' => 'event-single'
+]);
+
+Route::post('event-all', [
+    'uses' => 'PushController@allUserEvent',
+    'as' => 'event-all'
+]);
